@@ -72,7 +72,6 @@
   </div>
 </template>
 
-
 <script>
 import { useMachine } from "@xstate/vue";
 import { createTimerMachine } from "./timerMachine";
@@ -91,19 +90,20 @@ export default {
 <style lang="scss">
 .timer {
   --progress: calc((var(--elapsed)) / var(--duration));
-   display: grid;
-   grid-template-rows: 10vh 1fr 25vh;
-   grid-template-areas: 'header' 'main' 'actions';
-   height: 100%;
+  display: grid;
+  grid-template-rows: 10vh 1fr 25vh;
+  grid-template-areas: "header" "main" "actions";
+  height: 100%;
 
-   > header {
-     grid-area: header;
-   }
+  > header {
+    grid-area: header;
+  }
 
-  > .circles, > .display {
-     grid-area: main;
-     align-self: center;
-     justify-self: center;
+  > .circles,
+  > .display {
+    grid-area: main;
+    align-self: center;
+    justify-self: center;
   }
 
   > .actions {
@@ -112,7 +112,7 @@ export default {
 
   &[data-state~="idle"] {
     .progress {
-      transition-duration: .3s;
+      transition-duration: 0.3s;
     }
   }
 
@@ -157,8 +157,8 @@ export default {
     border: none;
     font-size: 1.5rem;
     font-weight: bold;
-    transition: background-color .3s ease;
-    
+    transition: background-color 0.3s ease;
+
     &:hover {
       background-color: var(--color-primary-light);
     }
@@ -166,13 +166,12 @@ export default {
 }
 
 button {
-  cursor: pointer; 
+  cursor: pointer;
 
   &:focus {
     outline: none;
   }
 }
-
 
 .display {
   display: flex;
@@ -185,7 +184,7 @@ button {
   color: var(--color-primary);
   font-size: 5rem;
   padding: 1rem;
-  transition: color .3s ease;
+  transition: color 0.3s ease;
   cursor: pointer;
 
   &:hover {
@@ -211,7 +210,7 @@ button {
 }
 
 .circles {
-  transform: rotate(-.25turn);
+  transform: rotate(-0.25turn);
   height: 100%;
   width: 100%;
   pointer-events: none;
@@ -234,7 +233,8 @@ circle {
 }
 
 @keyframes pulse {
-  from, to {
+  from,
+  to {
     opacity: 0;
   }
   50% {
@@ -249,13 +249,12 @@ header {
 
   a {
     color: white;
-    opacity: .5;
-    transition: opacity .3s ease;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
 
     &:hover {
       opacity: 1;
     }
   }
 }
-
 </style>
