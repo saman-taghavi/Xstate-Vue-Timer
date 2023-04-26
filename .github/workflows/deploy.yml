@@ -16,4 +16,3 @@ jobs:
           reponame: "Xstate-Vue-Timer"
           token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
           useyarn: true
-
