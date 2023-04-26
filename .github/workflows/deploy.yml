@@ -1,8 +1,5 @@
 name: Build Vue
-on:
-  push:
-    branches:
-      - main
+on: [push]
 jobs:
   build_vue:
     runs-on: ubuntu-latest
@@ -10,9 +7,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - id: Build-Vue
-        uses: xRealNeon/VuePagesAction@1.0.1
+        uses: xRealNeon/VuePagesAction@1.0.0
         with:
           username: "saman-taghavi"
           reponame: "Xstate-Vue-Timer"
-          token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
+          token: ${{ secrets.GITHUB_TOKEN }}
           useyarn: true
